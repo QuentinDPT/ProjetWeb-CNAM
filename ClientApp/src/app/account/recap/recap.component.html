@@ -1,0 +1,64 @@
+<main>
+  <section>
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Récap d'inscription</h2>
+          <form class="client" method="POST">
+            <div class="form">
+              <div class="d-flex">
+                <div class="form-group w-100">
+                  <label>Nom</label>
+                  <p class="form-control" id="r_name">{{user.name}}</p>
+                </div>
+                <div class="form-group w-100">
+                  <label>Prénom</label>
+                  <p class="form-control" id="r_surname">{{user.surname}}</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="form-group w-90">
+                  <label>Addresse</label>
+                  <p class="form-control" id="r_address">{{user.address}}</p>
+                </div>
+                <div class="form-group min-w-100">
+                  <label>Code postal</label>
+                  <p class="form-control" id="r_cp">{{user.postal_code}}</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="form-group w-100">
+                  <label>Numéro de téléphone</label>
+                  <p class="form-control" id="r_phone">{{user.phone}}</p>
+                </div>
+                <div class="form-group w-100">
+                  <label>Pays</label>
+                  <p class="form-control" id="r_country">{{user.country}}</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="form-group w-100">
+                  <label>E-Mail</label>
+                  <p class="form-control" id="r_email">{{user.email}}</p>
+                </div>
+                <div class="form-group w-100">
+                  <label>Civilité</label>
+                  <p class="form-control" id="r_civility">{{user.civility}}<p>
+                </div>
+              </div>
+              <div class="form-group d-flex">
+                <p class="form-control" id="r_login">{{user.login}}</p>
+                <input disabled class="form-control" id="r_pwd" value="{{user.password}}">
+              </div>
+            </div>
+            <div id="validation">
+              <input type="button" class="btn btn-warning" id="btnReturn" (click)="recapRedirection()" name="" value="Retour">
+              <input type="button" class="btn btn-primary" id="btnAccept" (click)="recapAccept()" name="" value="Accepter">
+            </div>
+            <!--<input class="btn btn-primary" (click)="onSubmit" type="submit" name="" value="OK">-->
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

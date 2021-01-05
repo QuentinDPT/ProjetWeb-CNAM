@@ -1,0 +1,10 @@
+<main>
+  <section>
+    <div class="container pb-5">
+      <h2>Produits</h2>
+      <div class="row" *ngFor="let prod of allProducts | async">
+        <product-element [product]=prod></product-element>
+      </div>
+    </div>
+  </section>
+</main>

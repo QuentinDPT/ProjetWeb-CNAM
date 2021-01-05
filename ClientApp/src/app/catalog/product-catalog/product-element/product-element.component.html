@@ -1,0 +1,19 @@
+<div class="product mb-2">
+  <div class="album-img" [ngClass]="add == 1 ? 'purchase' : 'nothing' " (click)="addToCart()">
+    <img style="height:100%;width:100%;" src="{{product.image_url}}" alt="">
+  </div>
+  <aside class="ml-2" [routerLink]="[product.id]">
+    <h3>{{product.name}}</h3>
+    <p class="product-price">{{product.price}}</p>
+    <p class="product-description">{{product.description}}</p>
+    <div class="product-note">
+      <p *ngIf="product.note < 1">☆☆☆☆☆ {{product.note}}</p>
+      <p *ngIf="product.note >=1 && product.note <2">★☆☆☆☆ {{product.note}}</p>
+      <p *ngIf="product.note >=2 && product.note <3">★★☆☆☆ {{product.note}}</p>
+      <p *ngIf="product.note >=3 && product.note <4">★★★☆☆ {{product.note}}</p>
+      <p *ngIf="product.note >=4 && product.note <5">★★★★☆ {{product.note}}</p>
+      <p *ngIf="product.note >=5">★★★★★ {{product.note}}</p>
+    </div>
+    <p class="see-more">Cliquez pour en savoir plus</p>
+  </aside>
+</div>

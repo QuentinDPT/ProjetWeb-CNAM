@@ -1,0 +1,69 @@
+<main>
+  <section>
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Formulaire d'inscription</h2>
+          <form class="client" method="POST">
+            <div class="form">
+              <div class="d-flex">
+                <div class="form-group w-100">
+                  <label for="name">Nom</label>
+                  <input [(ngModel)]="user.name" class="form-control" type="text" id="name" name="name" value="" placeholder="Jean-claude" pattern="[A-Za-z- ]*" required>
+                </div>
+                <div class="form-group w-100">
+                  <label for="surname">Prénom</label>
+                  <input [(ngModel)]="user.surname" class="form-control" type="text" id="surname" name="surname" value="" placeholder="Prénom" pattern="[A-Za-z- ]*" required>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="form-group w-90">
+                  <label for="address">Addresse</label>
+                  <input [(ngModel)]="user.address" class="form-control" type="text" id="address" name="address" value="" placeholder="30 rue des plantes Perpettes-les-oies" pattern="[A-Za-z0-9,\- ]*" required>
+                </div>
+                <div class="form-group min-w-100">
+                  <label for="cp">Code postal</label>
+                  <input [(ngModel)]="user.postal_code" class="form-control" type="text" id="cp" name="cp" value="" placeholder="36 861" pattern="[AB0-9 ]*" required>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="form-group w-100">
+                  <label for="phone">Numéro de téléphone</label>
+                  <input [ngModel]="user.phone|phone" (ngModelChange)="user.phone=$event" class="form-control" type="text" id="phone" name="phone" placeholder="06 12 34 56 78" pattern="[ 0-9]*" required>
+                </div>
+                <div class="form-group w-100">
+                  <label for="country">Pays</label>
+                  <select [(ngModel)]="user.country" id="country" class="form-control" name="country">
+                    <option *ngFor="let country of allCountries">{{country}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="form-group w-100">
+                  <label for="email">E-Mail</label>
+                  <input [(ngModel)]="user.email" type="text" class="form-control" id="email" name="email" value="" placeholder="E-Mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" required>
+                </div>
+                <div class="form-group w-100">
+                  <label for="civility">Civilité</label>
+                  <select [(ngModel)]="user.civility" id="civility" class="form-control" name="civility" required>
+                    <option value="M">Monsieur</option>
+                    <option value="F">Madamme</option>
+                    <option value="-">Rien</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group d-flex">
+                <input [(ngModel)]="user.login" class="form-control" type="text" id="login" name="login" value="" placeholder="Login" required>
+                <input [(ngModel)]="user.password" class="form-control" type="password" id="pwd" name="pwd" value="" placeholder="Mot de passe" required>
+              </div>
+            </div>
+            <div id="validation">
+              <input type="button" class="btn btn-primary" id="btnValidation" (click)="onSubmit()" name="" value="OK">
+            </div>
+            <!--<input class="btn btn-primary" (click)="onSubmit" type="submit" name="" value="OK">-->
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

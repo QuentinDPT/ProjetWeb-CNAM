@@ -1,0 +1,106 @@
+
+
+.album-img{
+  width:250px;
+  height:250px;
+
+  &:after{
+    content: "";
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Shopping_Cart_Flat_Icon_Vector.svg/1200px-Shopping_Cart_Flat_Icon_Vector.svg.png");
+    background-size: 250px 250px;
+    display: inline-block;
+    position:relative;
+    width:250px;
+    height:250px;
+    top:-250px;
+    opacity: 0;
+    transition: ease-out .3s;
+  }
+
+  &:hover{
+    &:after{
+      opacity:0.95;
+    }
+  }
+}
+
+.product{
+  display: flex;
+}
+
+.product aside{
+  position: relative;
+  width:100%;
+}
+
+.product .album-img{
+  transition: ease-out .3s ;
+
+  transform: scale(0.85);
+}
+
+.product:hover .album-img{
+  transform: scale(1);
+}
+
+.product .see-more{
+  transition: 1s ease-out;
+  opacity:0;
+  position:absolute;
+  bottom:0;
+  right:0;
+  transform: translateX(-5vw);
+}
+
+.product:hover .see-more{
+  transition-delay: 3s;
+  opacity:1;
+  transform: translateX(0);
+}
+
+.product .product-description{
+  transition: .3s ;
+
+  opacity: .7 ;
+}
+
+.product:hover .product-description{
+  opacity: 1 ;
+}
+
+.product .product-note{
+  transition: .3s ;
+
+  position:absolute;
+  bottom:1rem;
+  left:0;
+
+  opacity: .5;
+}
+
+.product:hover .product-note{
+  opacity: 1;
+}
+
+.product-price{
+  margin-left: .8rem;
+
+  font-size: .9rem ;
+
+  &:after{
+    content:" €" ;
+  }
+}
+
+img{
+  transition:.2s;
+  transform: scale(100%);
+}
+
+.purchase img{
+  transform: scale(110%);
+}
+
+.remove{
+
+}
