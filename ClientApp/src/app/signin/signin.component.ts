@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { LoginService } from '../../services/login.service';
 
-
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -20,7 +19,11 @@ export class SigninComponent implements OnInit {
 
   log(){
     this.dataService.login(this.login, this.password).subscribe(function(e){
-      console.log(e);
+      if(e.success){
+        console.log(e) ;
+        localStorage.setItem('user', JSON.stringify(e.user));
+
+      }
     })
   }
 }

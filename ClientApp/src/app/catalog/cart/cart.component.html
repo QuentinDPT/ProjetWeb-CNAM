@@ -2,6 +2,9 @@
   <section>
     <div class="container pb-5">
       <h2>Pannier</h2>
+      <div class="">
+        <p>La valeur de votre pannier s'élève à {{cartValue}}€</p>
+      </div>
       <div class="row" *ngFor="let prod of cart | async" [ngClass]="add == -1 ? 'remove' : 'nothing'">
         <product-element id="pe_{{prod.id}}" [product]=prod></product-element>
         <input id="btn_{{prod.id}}" type="button" name="" (click)="removeFromCart(prod)" value="suppress">

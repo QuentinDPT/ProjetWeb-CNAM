@@ -93,7 +93,7 @@ class ProductController{
         new ProductModel(
           "Eliminate x Shaq - Tear It Up",
           5,
-          "https://cdn.apocanow.it/beatgogo/uploads/al/60796.jpg",
+          "https://geo-static.traxsource.com/files/images/f48f338e17358ce836f1b01a150c3168.jpg",
           "DESCRIPTION",
           3
         ),

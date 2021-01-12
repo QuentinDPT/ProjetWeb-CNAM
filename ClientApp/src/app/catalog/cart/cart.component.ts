@@ -16,11 +16,24 @@ import { ProductState } from "../states/product.state" ;
 export class CartComponent implements OnInit {
   cart: Observable<Product[]>;
   add: number = 0 ;
+  cartValue: number = 0;
 
   constructor(private productStore: Store) { }
 
   ngOnInit(): void {
+
     this.cart = this.productStore.select(state => state.products.products);
+    this.cart.subscribe({
+      next: this.computeCart
+    });
+  }
+
+  computeCart(cart: Product[]){
+    let totalPrice = 0 ;
+    cart.forEach(lm => {
+      totalPrice += lm.price ;
+    });
+    console.log(totalPrice) ;
   }
 
   removeFromCart(product:Product):void{

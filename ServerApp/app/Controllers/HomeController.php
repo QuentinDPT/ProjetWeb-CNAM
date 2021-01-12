@@ -7,7 +7,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class HomeController{
   public function home(Request $request, Response $response, array $args): Response{
-    $response->getBody()->write("Login");
+    $response->getBody()->write("PAGE PRINCIPALE");
     return $response;
   }
 }

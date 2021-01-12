@@ -11,6 +11,8 @@ if (!(PHP_VERSION_ID >= 70300)) {
 $missingExtensions = array();
 extension_loaded('json') || $missingExtensions[] = 'json';
 extension_loaded('pcre') || $missingExtensions[] = 'pcre';
+extension_loaded('pdo') || $missingExtensions[] = 'pdo';
+extension_loaded('tokenizer') || $missingExtensions[] = 'tokenizer';
 
 if ($missingExtensions) {
     $issues[] = 'Your Composer dependencies require the following PHP extensions to be installed: ' . implode(', ', $missingExtensions);

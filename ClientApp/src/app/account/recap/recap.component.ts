@@ -37,8 +37,6 @@ export class RecapComponent implements OnInit {
     var account : HTMLElement = document.getElementsByTagName("app-register")[0] as HTMLElement ;
     var recap : HTMLElement = document.getElementsByTagName("app-recap")[0] as HTMLElement ;
 
-    console.log(this.user) ;
-
     recap.style.display = "none" ;
   }
 }
